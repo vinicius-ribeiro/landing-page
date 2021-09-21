@@ -5,6 +5,10 @@ const GET_LANDING_PAGE = /* GraphQL */ `
         alternativeText
         url
       }
+      header {
+        title
+        description
+      }
     }
   }
 `

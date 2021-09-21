@@ -6,25 +6,26 @@ import * as S from './styles'
 
 import { gaEvent } from 'utils/ga'
 import Container from 'components/Container'
-import { LogoProps } from 'types/api'
+import { HeaderProps, LogoProps } from 'types/api'
 
 const onClick = () =>
   gaEvent({ action: 'click', category: 'cta', label: 'hero button' })
 
 type Props = {
   logo: LogoProps
+  header: HeaderProps
 }
 
-const SectionHero = ({ logo }: Props) => (
+const SectionHero = ({ logo, header }: Props) => (
   <S.Wrapper>
     <Container>
       <Logo {...logo} />
 
       <S.Content>
         <S.TextBlock>
-          <S.Title>React Avançado</S.Title>
+          <S.Title>{header.title}</S.Title>
           <S.Description>
-            Crie aplicações reais com NextJS, Strapi, GraphQL e mais!
+            { header.description }
           </S.Description>
           <S.ButtonWrapper>
             <Button
