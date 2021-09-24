@@ -80,9 +80,22 @@ export type Author = {
   socialLinks: SocialLink[]
 }
 
-export type sectionAboutUsProps = {
+export type SectionAboutUsProps = {
   title: string
   authors: Author[]
+}
+
+export type Review = {
+  name: string
+  text: string
+  photo: {
+    url: string
+  }
+}
+
+export type SectionReviewsProps = {
+  title: string
+  reviews: Review[]
 }
 
 export type LandingPageProps = {
@@ -94,5 +107,6 @@ export type LandingPageProps = {
   sectionModules: SectionModulesProps
   sectionAgenda: SectionAgendaProps
   pricingBox: PricingBoxProps
-  sectionAboutUs: SectionAboutProjectProps
+  sectionAboutUs: SectionAboutUsProps
+  sectionReviews: SectionReviewsProps
 }
