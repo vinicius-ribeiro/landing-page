@@ -55,10 +55,10 @@ const GET_LANDING_PAGE = /* GraphQL */ `
 
   fragment sectionModules on LandingPage {
     sectionModules {
-      title,
+      title
       modules {
-        title,
-        subtitle,
+        title
+        subtitle
         description
       }
     }
@@ -67,7 +67,7 @@ const GET_LANDING_PAGE = /* GraphQL */ `
   fragment sectionAgenda on LandingPage {
     sectionAgenda {
       title
-      description      
+      description
     }
   }
 
@@ -94,7 +94,7 @@ const GET_LANDING_PAGE = /* GraphQL */ `
         photo {
           alternativeText
           url
-        }      
+        }
         socialLinks {
           title
           url
@@ -110,8 +110,18 @@ const GET_LANDING_PAGE = /* GraphQL */ `
         name
         text
         photo {
-          url        
+          url
         }
+      }
+    }
+  }
+
+  fragment sectionFaq on LandingPage {
+    sectionFaq {
+      title
+      questions {
+        question
+        answer
       }
     }
   }
@@ -128,6 +138,7 @@ const GET_LANDING_PAGE = /* GraphQL */ `
       ...pricingBox
       ...sectionAboutUs
       ...sectionReviews
+      ...sectionFaq
     }
   }
 `
