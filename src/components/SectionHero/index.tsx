@@ -19,33 +19,33 @@ type Props = {
 
 const SectionHero = ({ logo, header }: Props) => (
   <S.Wrapper>
-  <Container>
-    <Logo />
+    <Container>
+      <Logo {...logo} />
 
-    <S.Content>
-      <S.TextBlock>
-        <S.Title>React Avançado</S.Title>
-        <S.Description>
-          Crie aplicações reais com NextJS, Strapi, GraphQL e mais!
-        </S.Description>
-        <S.ButtonWrapper>
-          <Button
-            href="https://www.udemy.com/course/react-avancado/?couponCode=PROMOOUT21"
-            onClick={onClick}
-            wide
-          >
-            Comprar
-          </Button>
-        </S.ButtonWrapper>
-      </S.TextBlock>
+      <S.Content>
+        <S.TextBlock>
+          <S.Title>{header.title}</S.Title>
+          <S.Description>
+            { header.description }
+          </S.Description>
+          <S.ButtonWrapper>
+            <Button
+              href={ header.button.url }
+              onClick={onClick}
+              wide
+            >
+              { header.button.label }
+            </Button>
+          </S.ButtonWrapper>
+        </S.TextBlock>
 
-      <S.Image
-        src="/img/hero-illustration.svg"
-        alt="Ilustração de um desenvolvedor em frente a um computador com várias linhas de código."
-      />
-    </S.Content>
-  </Container>
-</S.Wrapper>
+        <S.Image
+          src={ getImageUrl(header.image.url) }
+          alt={ header.image.alternativeText }
+        />
+      </S.Content>
+    </Container>
+  </S.Wrapper>
 )
 
 export default SectionHero
