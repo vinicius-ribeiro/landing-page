@@ -5,9 +5,9 @@ import Container from 'components/Container'
 import ProfileCard from 'components/ProfileCard'
 
 import * as S from './styles'
-import { sectionAboutUsProps } from 'types/api'
+import { SectionAboutUsProps } from 'types/api'
 
-const SectionAboutUs = ({ title, authors}: sectionAboutUsProps) => (
+const SectionAboutUs = ({ title, authors}: SectionAboutUsProps) => (
   <Container>
     <Heading reverseColor>{title}</Heading>
 
